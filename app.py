@@ -5,9 +5,10 @@ import matplotlib as mpl
 import matplotlib.font_manager as fm
 
 font_path = "fonts/NotoSansKR-Regular.ttf"
-font_prop = fm.FontProperties(fname=font_path)
+fm.fontManager.addfont(font_path)
+font_name = fm.FontProperties(fname=font_path).get_name()
 
-mpl.rcParams["font.family"] = font_prop.get_name()
+mpl.rcParams["font.family"] = font_name
 mpl.rcParams["axes.unicode_minus"] = False
 
 st.set_page_config(
