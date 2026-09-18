@@ -2,8 +2,12 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 import matplotlib as mpl
+import matplotlib.font_manager as fm
 
-mpl.rcParams["font.family"] = "Malgun Gothic"
+font_path = "fonts/NotoSansKR-Regular.ttf"
+font_prop = fm.FontProperties(fname=font_path)
+
+mpl.rcParams["font.family"] = font_prop.get_name()
 mpl.rcParams["axes.unicode_minus"] = False
 
 st.set_page_config(
